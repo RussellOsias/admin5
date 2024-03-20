@@ -26,13 +26,12 @@ ob_start();
                     if(isset($_SESSION['auth'])) {
                         echo $_SESSION['auth_user']['full_name'];
                     } else {
-                        echo "Not Logged in";
+                        echo "Logged in";
                     }
                     ?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    
                     <form action="home.php" method="POST">
                         <button type="submit" name="logout_btn" class="dropdown-item">Log Out</button>
                     </form>

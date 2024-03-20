@@ -87,7 +87,7 @@ if(isset($_SESSION['auth']) || isset($_SESSION['fb_user_id'])) {
                             <a href="<?php echo $fb_login_url; ?>" class="btn btn-primary"><i class="bi bi-facebook"></i> Login with Facebook</a><br>
                         </div>
                         <div class="form-group text-center">
-                            <a href="<?php echo $fb_login_url; ?>" class="btn btn-primary"><i class="bi bi-google"></i> Login with Facebook</a>
+                            <a href="google_index.php" class="btn btn-primary"><i class="bi bi-google"></i> Login with Google</a>
                         </div>
                     </div> 
                 </div>

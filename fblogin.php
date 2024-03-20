@@ -2,13 +2,18 @@
 session_start();
 
 $fbappid = "738619605004027";
-$redirectURL = "http://localhost/admin5/fbcallback.php"; // Corrected redirect URL
+$fbappsecret = "e307494a67e754a6f099d5cb86101be4"; // Define your Facebook App Secret here
+$redirectURL = "http://localhost/admin5/fbcallback.php";
 $fbPermissions = ['email'];
 
-require_once __DIR__ . '/Facebook/autoload.php';
+require_once __DIR__ . '/Facebook/autoload.php'; // Make sure to provide the correct path to the autoload.php file
 use Facebook\Facebook;
 
-$facebook = new Facebook(array('app_id' => $fbappid, 'app_secret' => $fbappsecret, 'default_graph_version' => 'v2.10'));
+$facebook = new Facebook([
+    'app_id' => $fbappid,
+    'app_secret' => $fbappsecret,
+    'default_graph_version' => 'v2.10'
+]);
 
 $helper = $facebook->getRedirectLoginHelper();
 

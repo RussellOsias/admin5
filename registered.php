@@ -1,6 +1,6 @@
 <?php
 // Include authentication check
-include('authentication.php');
+
 
 // Include header, topbar, sidebar, and database connection
 include('includes/header.php');

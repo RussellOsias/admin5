@@ -22,7 +22,7 @@ function validate($data)
     return $data;
 }
 
-// Check if the login button is clicked or if the user is logged in via Facebook
+// Check if the login button is clicked
 if (isset($_POST['login_btn'])) {
     // Sanitize username and password from the form submission
     $email = validate($_POST['email']);
@@ -67,8 +67,6 @@ if (isset($_POST['login_btn'])) {
             } catch (Exception $e) {
                 // Handle errors if email sending fails
                 $_SESSION['status'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                header("Location: login.php");
-                exit();
             }
             // Set status message and redirect to index page
             $_SESSION['status'] = "Logged in Successfully";
@@ -90,7 +88,7 @@ if (isset($_POST['login_btn'])) {
     // If the user is logged in via Facebook
     $_SESSION['auth'] = true;
     $_SESSION['auth_user'] = $_SESSION['facebook_user'];
-    header("Location: index.php");
+    header("Location: index.php"); // Redirect to the appropriate page after successful login
     exit();
 } else {
     // If login button is not clicked and user is not logged in via Facebook, deny access and redirect to login page
